@@ -1,0 +1,12 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.action.extension" value="html"/>
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="customers" class="controller.CustomerController">
+			<result name="success">/customers.jsp</result>
+		</action>
+	</package>
+</struts>
+
