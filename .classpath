@@ -37,5 +37,27 @@
 	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/struts2-core-2.3.1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/taglibs-standard-impl-1.2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/xwork-core-2.3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/velocity-tools-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/velocity-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-velocity-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-template-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-servlet-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-velocity-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-servlet-wildcard-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-servlet-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-mustache-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-jsp-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-freemarker-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-request-api-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-ognl-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-mvel-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-jsp-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-freemarker-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-extras-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-el-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-core-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-compat-3.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-autotag-core-runtime-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tientm/Desktop/eclipse-workspace/lib/tiles-api-3.0.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
