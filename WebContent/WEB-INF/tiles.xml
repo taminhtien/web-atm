@@ -4,5 +4,8 @@
   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-	
+	<definition name="/customers" template="templates/layout.jsp">
+		<put-attribute name="title" value="Customer page"/>
+		<put-attribute name="content" value="/customers.jsp"/>
+	</definition>
 </tiles-definitions>
