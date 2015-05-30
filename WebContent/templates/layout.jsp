@@ -42,6 +42,13 @@
 		<div class="row">
 			<tiles:insertAttribute name="content"></tiles:insertAttribute>
 		</div>
+		<!-- Keypad -->
+		<div class="row keypad">
+			<div class="col-md-12 center-block text-center"><button class="btn btn-default">1</button><button class="btn btn-default">2</button><button class="btn btn-default">3</button></div>
+			<div class="col-md-12 center-block text-center"><button class="btn btn-default">4</button><button class="btn btn-default">5</button><button class="btn btn-default">6</button></div>
+			<div class="col-md-12 center-block text-center"><button class="btn btn-default">7</button><button class="btn btn-default">8</button><button class="btn btn-default">9</button></div>
+			
+		</div>
 		<!-- Footer -->
 		<footer style="text-align: center; border-top: 1px solid #777;">
 			Copyright @tientm 2015 </footer>

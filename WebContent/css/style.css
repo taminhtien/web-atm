@@ -2,7 +2,7 @@ body {
 	padding-top: 60px;
 }
 
-a {
+a #logo{
 	color: white;
 }
 
@@ -18,10 +18,24 @@ a:hover {
 	line-height: 29px;
 	opacity: 0.8;
 	text-align: center;
-	margin: 0 auto;
-	width: 900px;'
 }
 
 #logo {
 	padding-top: 9px;
+}
+
+.btn-atm {
+	margin-bottom: 70px;
+}
+
+.col-content {
+	color: red;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.keypad {
+	margin-top: 10px;
 }
