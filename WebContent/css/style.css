@@ -30,6 +30,13 @@ a:hover {
 	margin-bottom: 5px;
 }
 
+#keypad .btn-key{
+	width: 70px;
+}
+
+#keypad .btn-number{
+	width: 40px;
+}
 #logo {
 	padding-top: 9px;
 	padding-left: 20px;
@@ -53,4 +60,8 @@ a:hover {
 
 .col-right {
 	margin-right: 40px;
+}
+
+.btn {
+	border-radius: 0px 0px 0px 0px;
 }

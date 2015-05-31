@@ -37,81 +37,90 @@
 	        </div>
 		</div>
 	</nav>
-	<div class="container">
-		<!-- Content -->
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2" id="screen">
-			<div class="row" id="header">
-				<h2><span class="glyphicon glyphicon-usd"></span> Online Banking <small style="color: white;">Secure access to banking services</small></h2>
-			</div>
-			<div class="row">
-				<div class="col-md-3 pull-left text-left">
-					<a href="change-pin.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
-					<br>
-					<a href="check-balance.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Check Balance</a>
-					<br>
-					<a href="transfer.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Transfer</a>
+	
+	<!-- Body -->
+	<div class="container">	
+		<!-- Screen -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" id="screen">
+			
+				<!-- Banner -->
+				<div class="row" id="header">
+					<h2><span class="glyphicon glyphicon-usd"></span> Online Banking <small style="color: white;">Secure access to banking services</small></h2>
 				</div>
-				<div class="col-md-6 col-content">
-					<tiles:insertAttribute name="content"></tiles:insertAttribute>
+				<!-- End Banner -->
+			
+				<!-- Content -->
+				<div class="row">
+			
+					<!-- Left Column Button -->
+					<div class="col-md-3 pull-left text-left">
+						<a href="change-pin.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
+						<br>
+						<a href="check-balance.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Check Balance</a>
+						<br>
+						<a href="transfer.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Transfer</a>
+					</div>
+					<!-- End Left Column Button -->
+					
+					<!-- Mid Column Content -->
+					<div class="col-md-6 col-content">
+						<tiles:insertAttribute name="content"></tiles:insertAttribute>
+					</div>
+					<!-- End Mid Column Content -->
+					
+					<!-- Right Column Button -->
+					<div class="col-md-3 pull-right text-right">
+						<a href="withdraw.jsp" class="btn btn-primary btn-atm">Withdraw <span class="glyphicon glyphicon-chevron-right"></span></a>
+						<br>
+						<a href="view-history.jsp" class="btn btn-primary btn-atm">View history <span class="glyphicon glyphicon-chevron-right"></span></a>
+						<br>
+						<a href="exit.jsp" class="btn btn-primary btn-atm">Exit <span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+					<!-- End Right Column Button -->
+					
 				</div>
-				<div class="col-md-3 pull-right text-right">
-					<a href="withdraw.jsp" class="btn btn-primary btn-atm">Withdraw <span class="glyphicon glyphicon-chevron-right"></span></a>
-					<br>
-					<a href="view-history.jsp" class="btn btn-primary btn-atm">View history <span class="glyphicon glyphicon-chevron-right"></span></a>
-					<br>
-					<a href="exit.jsp" class="btn btn-primary btn-atm">Exit <span class="glyphicon glyphicon-chevron-right"></span></a>
-				</div>
+				<!-- End Content -->
+				
 			</div>
 		</div>
-		</div>
+		<!-- End Screen -->
+		
 		<!-- Keypad -->
 		<div class="row">
-			<div class="center-block" style="width: 185px;">
+			<div class="center-block" style="width: 205px;">
 				<div id="keypad">
-					<button class="btn btn-default">1</button>
-					<button class="btn btn-default">2</button>
-					<button class="btn btn-default">3</button>
-					<button class="btn btn-danger">Cancel</button>
+					<button class="btn btn-default btn-number">1</button>
+					<button class="btn btn-default btn-number">2</button>
+					<button class="btn btn-default btn-number">3</button>
+					<button class="btn btn-danger btn-key">Cancel</button>
 				</div>
 				<div id="keypad">
-					<button class="btn btn-default">4</button>
-					<button class="btn btn-default">5</button>
-					<button class="btn btn-default">6</button>
-					<button class="btn btn-warning">Clear</button>
+					<button class="btn btn-default btn-number">4</button>
+					<button class="btn btn-default btn-number">5</button>
+					<button class="btn btn-default btn-number">6</button>
+					<button class="btn btn-warning btn-key">Clear</button>
 				</div>
 				<div id="keypad">
-					<button class="btn btn-default">7</button>
-					<button class="btn btn-default">8</button>
-					<button class="btn btn-default">9</button>
-					<button class="btn btn-info">Enter</button>
+					<button class="btn btn-default btn-number">7</button>
+					<button class="btn btn-default btn-number">8</button>
+					<button class="btn btn-default btn-number">9</button>
+					<button class="btn btn-info btn-key">Enter</button>
+				</div>
+				<div id="keypad">
+					<button class="btn btn-default btn-number">0</button>
+					<button class="btn btn-default btn-number">.</button>
+					<button class="btn btn-default btn-number">00</button>
 				</div>
 			</div>
-			<!-- 
-			<div class="col-md-12">
-				<button class="btn btn-default">1</button>
-				<button class="btn btn-default">2</button>
-				<button class="btn btn-default">3</button>
-				<button class="btn btn-danger">Cancel</button>
-			</div>
-			<div class="col-md-12" style="margin-top: 5px;">
-				<button class="btn btn-default">4</button>
-				<button class="btn btn-default">5</button>
-				<button class="btn btn-default">6</button>
-				<button class="btn btn-warning">Clear</button>
-			</div>
-			<div class="col-md-12" style="margin-top: 5px;">
-				<button class="btn btn-default">7</button>
-				<button class="btn btn-default">8</button>
-				<button class="btn btn-default">9</button>
-				<button class="btn btn-info">Enter</button>
-			</div>
-			
-			 -->
 		</div>
+		<!-- End Keypad -->
+		
 		<!-- Footer -->
 		<footer style="text-align: center; border-top: 1px solid #777;">
-			Copyright @tientm 2015 </footer>
+			Copyright @tientm 2015
+		</footer>
+		<!-- End Footer -->
 	</div>
 </body>
 </html>
