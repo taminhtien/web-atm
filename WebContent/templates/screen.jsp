@@ -16,6 +16,7 @@
 <body>
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/atm.js"></script>
 
 	<!-- Header -->
 	<nav class="navbar navbar-fixed-top navbar-inverse">
@@ -90,27 +91,26 @@
 		<div class="row">
 			<div class="center-block" style="width: 205px;">
 				<div id="keypad">
-					<button class="btn btn-default btn-number">1</button>
-					<button class="btn btn-default btn-number">2</button>
-					<button class="btn btn-default btn-number">3</button>
-					<button class="btn btn-danger btn-key">Cancel</button>
+					<button class="btn btn-default btn-number" id="key-1" value="1" onclick="inputdata(this)">1</button>
+					<button class="btn btn-default btn-number" id="key-2" value="2" onclick="inputdata(this)">2</button>
+					<button class="btn btn-default btn-number" id="key-3" value="3" onclick="inputdata(this)">3</button>
+					<button class="btn btn-danger btn-key" id="key-cancel">Cancel</button>
 				</div>
 				<div id="keypad">
-					<button class="btn btn-default btn-number">4</button>
-					<button class="btn btn-default btn-number">5</button>
-					<button class="btn btn-default btn-number">6</button>
-					<button class="btn btn-warning btn-key">Clear</button>
+					<button class="btn btn-default btn-number" id="key-4" value="4" onclick="inputdata(this)">4</button>
+					<button class="btn btn-default btn-number" id="key-5" value="5" onclick="inputdata(this)">5</button>
+					<button class="btn btn-default btn-number" id="key-6" value="6" onclick="inputdata(this)">6</button>
+					<button class="btn btn-warning btn-key" id="key-clear">Clear</button>
 				</div>
 				<div id="keypad">
-					<button class="btn btn-default btn-number">7</button>
-					<button class="btn btn-default btn-number">8</button>
-					<button class="btn btn-default btn-number">9</button>
-					<button class="btn btn-info btn-key">Enter</button>
+					<button class="btn btn-default btn-number" id="key-7" value="7" onclick="inputdata(this)">7</button>
+					<button class="btn btn-default btn-number" id="key-8" value="8" onclick="inputdata(this)">8</button>
+					<button class="btn btn-default btn-number" id="key-9" value="9" onclick="inputdata(this)">9</button>
+					<button class="btn btn-info btn-key" id="key-enter">Enter</button>
 				</div>
 				<div id="keypad">
-					<button class="btn btn-default btn-number">0</button>
-					<button class="btn btn-default btn-number">.</button>
-					<button class="btn btn-default btn-number">00</button>
+					<button class="btn btn-default btn-number" id="key-0" value="0" onclick="inputdata(this)">0</button>
+					<button class="btn btn-default btn-number" id="key-00" value="00" onclick="inputdata(this)">00</button>
 				</div>
 			</div>
 		</div>
