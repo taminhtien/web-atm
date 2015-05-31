@@ -1,11 +1,11 @@
-var cardEntering = "";
+var inputCardNum = "";
 
 function inputdata(key) {
-	var n = cardEntering.length;
+	var n = inputCardNum.length;
 	if (n < 10) {
 		var val = key.value;
-		cardEntering = $('#cardNumber').val() + val;
-		$("#cardNumber").val(cardEntering);
+		inputCardNum = $('#inputCardNumber').val() + val;
+		$("#inputCardNumber").val(inputCardNum);
 	}
 
 }
@@ -21,13 +21,13 @@ function isValidCardNumber(cardNumber) {
 
 $(document).ready(function() {
 	$('#key-clear').click(function() {
-		cardEntering = "";
-		$("#cardNumber").val(cardEntering);
+		inputCardNum = "";
+		$("#inputCardNumber").val(inputCardNum);
 	});
 	
 	$("#key-enter").click(function() {
-        var cardNumberEntered;
-        cardNumberEntered = $('#cardNumber').val();
+		inputCardNum = $('#inputCardNumber').val();
+		alert(inputCardNum);
         document.forms['enterCardForm'].submit();
     });
 });
