@@ -12,11 +12,16 @@ a:hover {
 	text-decoration: none;
 }
 
+#header {
+	background-color: #3172AA;
+	color: white;
+	margin-bottom: 20px;	
+}
+
 #screen {
 	background: #fff;
 	border: 1px solid #ddd;
 	line-height: 29px;
-	opacity: 0.8;
 	text-align: center;
 	margin-bottom: 10px;
 }

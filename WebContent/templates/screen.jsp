@@ -41,8 +41,8 @@
 		<!-- Content -->
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2" id="screen">
-			<div class="row">
-				<h2 class="text-center">WEB ATM</h2>
+			<div class="row" id="header">
+				<h2><span class="glyphicon glyphicon-usd"></span> Online Banking <small style="color: white;">Secure access to banking services</small></h2>
 			</div>
 			<div class="row">
 				<div class="col-md-3 pull-left text-left">
