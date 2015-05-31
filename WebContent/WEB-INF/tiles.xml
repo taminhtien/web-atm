@@ -8,7 +8,7 @@
 		<put-attribute name="title" value="Customer page"/>
 		<put-attribute name="content" value="/customers.jsp"/>
 	</definition>
-	<definition name="/index" template="templates/layout.jsp">
+	<definition name="/index" template="templates/screen.jsp">
 		<put-attribute name="title" value="Web ATM"/>
 		<put-attribute name="content" value="/index.jsp"/>
 	</definition>

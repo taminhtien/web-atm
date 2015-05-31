@@ -18,10 +18,16 @@ a:hover {
 	line-height: 29px;
 	opacity: 0.8;
 	text-align: center;
+	margin-bottom: 10px;
+}
+
+#keypad {
+	margin-bottom: 5px;
 }
 
 #logo {
 	padding-top: 9px;
+	padding-left: 20px;
 }
 
 .btn-atm {
@@ -36,6 +42,10 @@ a:hover {
     transform: translateX(-50%) translateY(-50%);
 }
 
-.keypad {
-	margin-top: 10px;
+.col-left {
+	margin-left: 40px;
+}
+
+.col-right {
+	margin-right: 40px;
 }

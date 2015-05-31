@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html>
@@ -47,7 +47,6 @@
 			<div class="col-md-12 center-block text-center"><button class="btn btn-default">1</button><button class="btn btn-default">2</button><button class="btn btn-default">3</button></div>
 			<div class="col-md-12 center-block text-center"><button class="btn btn-default">4</button><button class="btn btn-default">5</button><button class="btn btn-default">6</button></div>
 			<div class="col-md-12 center-block text-center"><button class="btn btn-default">7</button><button class="btn btn-default">8</button><button class="btn btn-default">9</button></div>
-			
 		</div>
 		<!-- Footer -->
 		<footer style="text-align: center; border-top: 1px solid #777;">

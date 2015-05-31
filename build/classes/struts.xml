@@ -9,13 +9,11 @@
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 
-		<action name="customers" class="controller.CustomerController"
-			method="execute">
+		<action name="customers" class="controller.CustomerController" method="execute">
 			<result name="success" type="tiles">/customers</result>
 		</action>
 
-		<action name="index" class="controller.ScreenController"
-			method="execute">
+		<action name="index" class="controller.ScreenController" method="execute">
 			<result name="success" type="tiles">/index</result>
 		</action>
 	</package>
