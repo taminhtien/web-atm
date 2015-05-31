@@ -45,22 +45,22 @@
 				<h2 class="text-center">WEB ATM</h2>
 			</div>
 			<div class="row">
-				<div class="col-md-3 pull-left">
-					<a href="changePIN.html" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
+				<div class="col-md-3 pull-left text-left">
+					<a href="change-pin.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
 					<br>
-					<a href="changePIN.html" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
+					<a href="check-balance.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Check Balance</a>
 					<br>
-					<a href="changePIN.html" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Change PIN</a>
+					<a href="transfer.jsp" class="btn btn-primary btn-atm"><span class="glyphicon glyphicon-chevron-left"></span> Transfer</a>
 				</div>
 				<div class="col-md-6 col-content">
 					<tiles:insertAttribute name="content"></tiles:insertAttribute>
 				</div>
-				<div class="col-md-3 pull-right">
-					<a href="changePIN.html" class="btn btn-primary btn-atm">Change PIN <span class="glyphicon glyphicon-chevron-right"></span></a>
+				<div class="col-md-3 pull-right text-right">
+					<a href="withdraw.jsp" class="btn btn-primary btn-atm">Withdraw <span class="glyphicon glyphicon-chevron-right"></span></a>
 					<br>
-					<a href="changePIN.html" class="btn btn-primary btn-atm">Change PIN <span class="glyphicon glyphicon-chevron-right"></span></a>
+					<a href="view-history.jsp" class="btn btn-primary btn-atm">View history <span class="glyphicon glyphicon-chevron-right"></span></a>
 					<br>
-					<a href="changePIN.html" class="btn btn-primary btn-atm">Change PIN <span class="glyphicon glyphicon-chevron-right"></span></a>
+					<a href="exit.jsp" class="btn btn-primary btn-atm">Exit <span class="glyphicon glyphicon-chevron-right"></span></a>
 				</div>
 			</div>
 		</div>
