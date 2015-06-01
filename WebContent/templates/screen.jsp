@@ -14,8 +14,44 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/atm.js"></script>
+<script type="text/javascript">
+	var inputCardNum = "";
 	
+	function inputdata(key) {
+		var n = inputCardNum.length;
+		if (n < 10) {
+			var val = key.value;
+			inputCardNum = $('#inputCardNumber').val() + val;
+			$("#inputCardNumber").val(inputCardNum);
+		}
+	}
+	
+	function isValidCardNumber(cardNumber) {
+	    var isValid = false;
+	    var regex = /^([0-9]{10})$/;
+	    if (regex.test(cardNumber)) {
+	        isValid = true;
+	    }
+	    return isValid;
+	}
+	
+	$(document).ready(function() {
+		$('#key-clear').click(function() {
+			inputCardNum = "";
+			$("#inputCardNumber").val(inputCardNum);
+		});
+		
+		$('#key-enter').click(function() {
+			inputCardNum = $('#inputCardNumber').val();
+	        if (isValidCardNumber(inputCardNum) === false) {
+	            $("#showError").text("Invalid Card Number!");
+	        }
+	        else {
+	            document.forms['enterCardForm'].submit();
+	        }
+	    });
+	});
+</script>	
 <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 </head>
 <body>
