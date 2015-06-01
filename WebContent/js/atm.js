@@ -12,7 +12,7 @@ function inputdata(key) {
 
 function isValidCardNumber(cardNumber) {
     var isValid = false;
-    var regex = /^([0-9]{6})$/;
+    var regex = /^([0-9]{10})$/;
     if (regex.test(cardNumber)) {
         isValid = true;
     }
@@ -24,10 +24,28 @@ $(document).ready(function() {
 		inputCardNum = "";
 		$("#inputCardNumber").val(inputCardNum);
 	});
+	/*
+	var validator = $("#enter-card").BootstrapValidator ({
+		fields: {
+			inputCardNumber: {
+				messages: "Card Number is required",
+				validators: {
+					notEmpty: {
+						message: "Please provide a Card Number"
+					}
+				}
+			}
+		}
+	});*/
 	
-	$("#key-enter").click(function() {
+	$('#key-enter').click(function() {
 		inputCardNum = $('#inputCardNumber').val();
+        if (isValidCardNumber(inputCardNum) === false) {
+            $("#showError").text("Invalid Card Number!");
+        }
+        else {
+            document.forms['enterCardForm'].submit();
+        }
 		alert(inputCardNum);
-        document.forms['enterCardForm'].submit();
     });
 });

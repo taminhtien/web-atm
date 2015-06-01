@@ -11,13 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/atm.js"></script>
+	
 <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 </head>
 <body>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/atm.js"></script>
-
 	<!-- Header -->
 	<nav class="navbar navbar-fixed-top navbar-inverse">
 		<div class="container">
