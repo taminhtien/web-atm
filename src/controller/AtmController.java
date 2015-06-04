@@ -23,7 +23,7 @@ public class AtmController extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		this.listAtm = atmModel.findAll();
+		//this.listAtm = atmModel.findAll();
 		return SUCCESS;
 	}
 

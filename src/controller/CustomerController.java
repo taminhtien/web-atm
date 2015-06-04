@@ -32,7 +32,7 @@ public class CustomerController extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		this.listCustomer = this.cusModel.findAll();
+		//this.listCustomer = this.cusModel.findAll();
 		return SUCCESS;
 	}
 
@@ -41,8 +41,8 @@ public class CustomerController extends ActionSupport {
 	}
 
 	public String addCustomer() {
-		this.cusModel.create(cust);
-		this.listCustomer = this.cusModel.findAll();
+		//this.cusModel.create(cust);
+		//this.listCustomer = this.cusModel.findAll();
 		return SUCCESS;
 	}
 }

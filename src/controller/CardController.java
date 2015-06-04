@@ -41,7 +41,7 @@ public class CardController extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		this.listCard = cardModel.findAll();
+		this.listCard = cardModel.getListCard();
 		return SUCCESS;
 	}
 
@@ -53,10 +53,13 @@ public class CardController extends ActionSupport {
 	 * Kiểm tra sự tồn tại của card
 	 */
 	public String isExistCard() {
-		System.out.println("abc");
-		this.card = cardModel.find(this.cardNo);
+		System.out.println(cardNo);
+		this.card = cardModel.getCard(cardNo);
 		System.out.println(card.getCardNo());
-		return SUCCESS;
+		if (this.card == null) {
+			return "FAILED";
+		} else {
+			return SUCCESS;
+		}
 	}
-
 }

@@ -23,7 +23,7 @@ public class LogController extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		this.listLog = this.logModel.findAll();
+		//this.listLog = this.logModel.findAll();
 		return SUCCESS;
 	}
 
