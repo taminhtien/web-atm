@@ -91,5 +91,4 @@ public class Card implements java.io.Serializable {
 	public void setLogs(Set<Log> logs) {
 		this.logs = logs;
 	}
-
 }

@@ -19,6 +19,6 @@
 
 	<definition name="/enter-pin" template="templates/screen.jsp">
 		<put-attribute name="title" value="Enter Pin Number - Web ATM"/>
-		<put-attribute name="content" value="/enter-pín.jsp"/>
+		<put-attribute name="content" value="/enter-pin.jsp"/>
 	</definition>
 </tiles-definitions>

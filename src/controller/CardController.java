@@ -53,9 +53,11 @@ public class CardController extends ActionSupport {
 	 * Kiểm tra sự tồn tại của card
 	 */
 	public String isExistCard() {
-		System.out.println(cardNo);
 		this.card = cardModel.getCard(cardNo);
 		System.out.println(card.getCardNo());
+		System.out.println(card.getBalance());
+		System.out.println(card.getPin());
+		System.out.println(card.getCustomer().getCustName());
 		if (this.card == null) {
 			return "FAILED";
 		} else {

@@ -30,7 +30,7 @@
 		</action>
 		
 		<action name="enterCard" class="controller.CardController" method="isExistCard">
-			<result name="success">success.jsp</result>
+			<result name="success" type="tiles">/enter-pin</result>
 			<result name="FAILED">failed.jsp</result>
 		</action>
 	</package>
