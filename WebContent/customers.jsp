@@ -23,3 +23,5 @@
 		</c:forEach>
 	</tbody>
 </table>
+<s:a action="add.html">Add new product</s:a>
+<hr>

@@ -2,7 +2,7 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<constant name="struts.action.extension" value="html" />
+	<constant name="struts.action.extension" value="jsp" />
 	<package name="default" extends="struts-default" namespace="/">
 		<result-types>
 			<result-type name="tiles"
@@ -12,9 +12,25 @@
 		<action name="customers" class="controller.CustomerController" method="execute">
 			<result name="success" type="tiles">/customers</result>
 		</action>
+		
+		<action name="add" class="controller.CustomerController" method="add">
+			<result name="success">/add.jsp</result>
+		</action>
+		
+		<action name="addCustomer" class="controller.CustomerController" method="addCustomer">
+			<result name="success" type="tiles">/customers</result>
+		</action>
+		
+		<action name="card" class="controller.CardController" method="execute">
+			<result name="success" type="tiles">/card</result>
+		</action>
 
-		<action name="index" class="controller.ScreenController" method="execute">
+		<action name="index" class="controller.CardController" method="loadEnteringCardScreen">
 			<result name="success" type="tiles">/index</result>
+		</action>
+		
+		<action name="enterCard" class="controller.CardController" method="isExistCard">
+			<result name="success" type="tiles">/enter-pin</result>
 		</action>
 	</package>
 </struts>
