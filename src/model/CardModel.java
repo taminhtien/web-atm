@@ -51,8 +51,8 @@ public class CardModel {
 			for (Card card : cards) {
 				System.out.println("Card: " + card.getCardNo() + " : ");
 			}
-
-			c = cards.get(0);
+			if(cards.get(0) != null)
+				c = cards.get(0);
 			
 			session.getTransaction().commit();
 		} catch (Exception e) {

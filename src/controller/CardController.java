@@ -54,13 +54,13 @@ public class CardController extends ActionSupport {
 	 */
 	public String isExistCard() {
 		this.card = cardModel.getCard(cardNo);
-		System.out.println(card.getCardNo());
-		System.out.println(card.getBalance());
-		System.out.println(card.getPin());
-		System.out.println(card.getCustomer().getCustName());
 		if (this.card == null) {
 			return "FAILED";
 		} else {
+			System.out.println(card.getCardNo());
+			System.out.println(card.getBalance());
+			System.out.println(card.getPin());
+			System.out.println(card.getCustomer().getCustName());
 			return SUCCESS;
 		}
 	}

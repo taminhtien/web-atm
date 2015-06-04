@@ -31,7 +31,7 @@
 		
 		<action name="enterCard" class="controller.CardController" method="isExistCard">
 			<result name="success" type="tiles">/enter-pin</result>
-			<result name="FAILED">failed.jsp</result>
+			<result name="FAILED" type="tiles">/incorrect-card</result>
 		</action>
 	</package>
 </struts>
