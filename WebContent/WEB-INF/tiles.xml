@@ -19,6 +19,12 @@
 		<put-attribute name="content" value="/login.jsp" />
 		<put-attribute name="script" value="/js/login.js" />
 	</definition>
+	
+	<definition name="/incorrect-card" template="templates/screen.jsp">
+		<put-attribute name="title" value="Incorrect Card Number - Web ATM" />
+		<put-attribute name="content" value="/incorrect-card.jsp" />
+		<put-attribute name="script" value="/js/login.js" />
+	</definition>
 
 	<definition name="/enter-pin" template="templates/screen.jsp">
 		<put-attribute name="title" value="Enter Pin Number - Web ATM" />
@@ -26,9 +32,15 @@
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 
-	<definition name="/incorrect-card" template="templates/screen.jsp">
-		<put-attribute name="title" value="Incorrect Card Number - Web ATM" />
-		<put-attribute name="content" value="/incorrect-card.jsp" />
+	<definition name="/index" template="templates/screen.jsp">
+		<put-attribute name="title" value="Web ATM" />
+		<put-attribute name="content" value="/index.jsp" />
+		<put-attribute name="script" value="/js/enter-pin.js" />
+	</definition>
+	
+	<definition name="/incorrect-pin" template="templates/screen.jsp">
+		<put-attribute name="title" value="Incorrect Pin Number - Web ATM" />
+		<put-attribute name="content" value="/incorrect-pin.jsp" />
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 </tiles-definitions>

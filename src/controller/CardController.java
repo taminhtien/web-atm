@@ -57,10 +57,6 @@ public class CardController extends ActionSupport {
 		if (this.card == null) {
 			return ERROR;
 		} else {
-			System.out.println(card.getCardNo());
-			System.out.println(card.getBalance());
-			System.out.println(card.getPin());
-			System.out.println(card.getCustomer().getCustName());
 			return SUCCESS;
 		}
 	}
@@ -69,12 +65,9 @@ public class CardController extends ActionSupport {
 	 * Kiểm tra mã PIN có đúng không
 	 */
 	public String isCorrectPin() {
-		System.out.println("isCorrectPin");
 		if (card.getPin() == pinNo) {
-			System.out.println("Success");
 			return SUCCESS;
 		} else {
-			System.out.println("Fail");
 			return ERROR;
 		}
 	}
