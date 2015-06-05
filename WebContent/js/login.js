@@ -24,6 +24,7 @@ $(document).ready(function() {
 	});
 	
 	$('#key-enter').click(function() {
+		cardNo = $('#cardNo').val();
         if (isValidCardNumber(cardNo) === false) {
             $("#showError").text("Invalid Card Number!");
         }

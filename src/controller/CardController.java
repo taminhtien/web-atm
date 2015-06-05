@@ -14,7 +14,7 @@ public class CardController extends ActionSupport {
 	private Card card = new Card();
 	private CardModel cardModel = new CardModel();
 	private String cardNo;
-	private String pin;
+	private String pinNo;
 	public String getCardNo() {
 		return cardNo;
 	}
@@ -55,7 +55,7 @@ public class CardController extends ActionSupport {
 	public String isExistCard() {
 		this.card = cardModel.getCard(cardNo);
 		if (this.card == null) {
-			return "FAILED";
+			return ERROR;
 		} else {
 			System.out.println(card.getCardNo());
 			System.out.println(card.getBalance());
@@ -68,11 +68,14 @@ public class CardController extends ActionSupport {
 	/**
 	 * Kiểm tra mã PIN có đúng không
 	 */
-	pubic isCorrectPin() {
-		if (card.getPin() == pin) {
+	public String isCorrectPin() {
+		System.out.println("isCorrectPin");
+		if (card.getPin() == pinNo) {
+			System.out.println("Success");
 			return SUCCESS;
 		} else {
-			return "FAIL";
+			System.out.println("Fail");
+			return ERROR;
 		}
 	}
 }
