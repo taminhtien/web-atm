@@ -14,7 +14,7 @@ public class CardController extends ActionSupport {
 	private Card card = new Card();
 	private CardModel cardModel = new CardModel();
 	private String cardNo;
-
+	private String pin;
 	public String getCardNo() {
 		return cardNo;
 	}
@@ -62,6 +62,17 @@ public class CardController extends ActionSupport {
 			System.out.println(card.getPin());
 			System.out.println(card.getCustomer().getCustName());
 			return SUCCESS;
+		}
+	}
+	
+	/**
+	 * Kiểm tra mã PIN có đúng không
+	 */
+	pubic isCorrectPin() {
+		if (card.getPin() == pin) {
+			return SUCCESS;
+		} else {
+			return "FAIL";
 		}
 	}
 }

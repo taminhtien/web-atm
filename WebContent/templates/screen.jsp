@@ -121,8 +121,5 @@
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		<tiles:insertAttribute name="script"></tiles:insertAttribute>
-	</script>
 </body>
 </html>

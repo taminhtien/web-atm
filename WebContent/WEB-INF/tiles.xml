@@ -12,10 +12,9 @@
 		<put-attribute name="title" value="Card page" />
 		<put-attribute name="content" value="/card.jsp" />
 	</definition>
-	<definition name="/index" template="templates/screen.jsp">
+	<definition name="/login" template="templates/screen.jsp">
 		<put-attribute name="title" value="Web ATM" />
-		<put-attribute name="content" value="/index.jsp" />
-		<put-attribute name="script" value="/js/enter-card.js" />
+		<put-attribute name="content" value="/login.jsp" />
 	</definition>
 
 	<definition name="/enter-pin" template="templates/screen.jsp">

@@ -25,13 +25,18 @@
 			<result name="success" type="tiles">/card</result>
 		</action>
 
-		<action name="index" class="controller.CardController" method="loadEnteringCardScreen">
-			<result name="success" type="tiles">/index</result>
+		<action name="login" class="controller.CardController" method="loadEnteringCardScreen">
+			<result name="success" type="tiles">/login</result>
 		</action>
 		
 		<action name="enterCard" class="controller.CardController" method="isExistCard">
 			<result name="success" type="tiles">/enter-pin</result>
 			<result name="FAILED" type="tiles">/incorrect-card</result>
+		</action>
+		
+		<action name="enterPin" class="controller.CardController" method="isCorrectPin">
+			<result name="success" type="tiles">/index</result>
+			<result name="FAILED" type="tiles">/incorrect-pin</result>
 		</action>
 	</package>
 </struts>

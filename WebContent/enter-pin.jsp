@@ -37,6 +37,7 @@
 		});
 		
 		$('#key-enter').click(function() {
+			pinNo = $('#pinNo').val();
 	        if (isValidPinNumber(pinNo) === false) {
 	            $("#showError").text("Invalid Pin Number!");
 	        }
