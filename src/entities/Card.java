@@ -28,6 +28,14 @@ public class Card implements java.io.Serializable {
 
 	public Card() {
 	}
+	
+	public Card(Card c) {
+		this.cardNo = c.cardNo;
+		this.customer = c.customer;
+		this.pin = c.pin;
+		this.balance = c.balance;
+		this.logs = c.logs;
+	}
 
 	public Card(String cardNo, Customer customer, String pin, String balance) {
 		this.cardNo = cardNo;

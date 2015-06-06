@@ -2,19 +2,35 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import model.CardModel;
 import entities.Card;
 
-public class CardController extends ActionSupport {
+public class CardController extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
-	private List<Card> listCard = new ArrayList<Card>();
-	private Card card = new Card();
 	private CardModel cardModel = new CardModel();
 	private String cardNo;
 	private String pinNo;
+	private Map<String, Object> sessionMap;
+
+	@Override
+	public void setSession(Map<String, Object> sessionMap) {
+		this.sessionMap = sessionMap;
+	}
+
+	public String getPinNo() {
+		return pinNo;
+	}
+
+	public void setPinNo(String pinNo) {
+		this.pinNo = pinNo;
+	}
+
 	public String getCardNo() {
 		return cardNo;
 	}
@@ -23,25 +39,8 @@ public class CardController extends ActionSupport {
 		this.cardNo = cardNo;
 	}
 
-	public Card getCard() {
-		return card;
-	}
-
-	public void setCard(Card card) {
-		this.card = card;
-	}
-
-	public List<Card> getListCard() {
-		return listCard;
-	}
-
-	public void setListCard(List<Card> listCard) {
-		this.listCard = listCard;
-	}
-
 	@Override
 	public String execute() throws Exception {
-		this.listCard = cardModel.getListCard();
 		return SUCCESS;
 	}
 
@@ -53,22 +52,23 @@ public class CardController extends ActionSupport {
 	 * Kiểm tra sự tồn tại của card
 	 */
 	public String isExistCard() {
-		this.card = cardModel.getCard(cardNo);
-		if (this.card == null) {
+		if (!cardModel.isExistCard(cardNo)) {
 			return ERROR;
 		} else {
+			sessionMap.put("CardNo", cardNo);
 			return SUCCESS;
 		}
 	}
-	
+
 	/**
 	 * Kiểm tra mã PIN có đúng không
 	 */
 	public String isCorrectPin() {
-		if (card.getPin() == pinNo) {
-			return SUCCESS;
-		} else {
+		if (!cardModel.isCorrectPin(cardNo, pinNo)) {
 			return ERROR;
+		} else {
+			System.out.println("Dung ma pin");
+			return SUCCESS;
 		}
 	}
 }

@@ -9,32 +9,8 @@ import org.hibernate.SessionFactory;
 import entities.Card;
 
 public class CardModel {
-	public List<Card> getListCard() {
-		List<Card> cards = null;
-		SessionFactory factory = HibernateUtils.getSessionFactory();
-		Session session = factory.getCurrentSession();
 
-		try {
-			session.getTransaction().begin();
-
-			String sql = "Select e from " + Card.class.getName() + " e ";
-			Query query = session.createQuery(sql);
-			cards = query.list();
-
-			for (Card c : cards) {
-				System.out.println("Card: " + c.getCardNo());
-			}
-
-			session.getTransaction().commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			session.getTransaction().rollback();
-		}
-		return cards;
-	}
-
-	public Card getCard(String cardNo) {
-		Card c = null;
+	public boolean isExistCard(String cardNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
 
@@ -48,17 +24,41 @@ public class CardModel {
 
 			List<Card> cards = query.list();
 
-			for (Card card : cards) {
-				System.out.println("Card: " + card.getCardNo() + " : ");
+			if(cards != null) {
+				return true;
 			}
-			if(cards.get(0) != null)
-				c = cards.get(0);
 			
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.getTransaction().rollback();
 		}
-		return c;
+		return false;
+	}
+	
+	public boolean isCorrectPin(String cardNo, String pinNo) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.getTransaction().begin();
+			String sql = "Select c from " + Card.class.getName() + " c "
+					+ " where c.cardNo=:cardNo ";
+
+			Query query = session.createQuery(sql);
+			query.setParameter("cardNo", cardNo);
+
+			List<Card> cards = query.list();
+
+			System.out.println(cards.get(0).getPin());
+			if(cards != null && cards.get(0).getPin().equals(pinNo))
+				return true;
+			
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		return false;
 	}
 }
