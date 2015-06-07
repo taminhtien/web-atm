@@ -66,10 +66,9 @@ public class CardController extends ActionSupport implements SessionAware {
 	 * Validate pin
 	 */
 	public String isCorrectPin() {
-		if (!cardModel.isCorrectPin(cardNo, pinNo)) {
+		if (!cardModel.isCorrectPin(sessionMap.get("CardNo").toString(), pinNo)) {
 			return ERROR;
 		} else {
-			System.out.println("Dung ma pin");
 			return SUCCESS;
 		}
 	}

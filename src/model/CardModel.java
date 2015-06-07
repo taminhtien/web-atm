@@ -29,7 +29,7 @@ public class CardModel {
 				session.getTransaction().commit();
 				return true;
 			}
-
+			session.getTransaction().commit();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,8 +52,10 @@ public class CardModel {
 
 			List<Card> cards = query.list();
 
-			if (cards != null && cards.get(0).getPin().equals(pinNo))
+			if (cards != null && cards.get(0).getPin().equals(pinNo)) {
+				session.getTransaction().commit();
 				return true;
+			}
 
 			session.getTransaction().commit();
 		} catch (Exception e) {
