@@ -46,19 +46,24 @@ public class CardController extends ActionSupport implements SessionAware {
 	}
 
 	/**
-	 * Kiểm tra sự tồn tại của card
+	 * Check the existence of cardNo
 	 */
 	public String isExistCard() {
 		if (!cardModel.isExistCard(cardNo)) {
 			return ERROR;
 		} else {
 			sessionMap.put("CardNo", cardNo);
+			/**
+			 * Get Customer name and put it to session
+			 */
+			String custName = cardModel.getCustName(cardNo);
+			sessionMap.put("CustName", custName);
 			return SUCCESS;
 		}
 	}
 
 	/**
-	 * Kiểm tra mã PIN có đúng không
+	 * Validate pin
 	 */
 	public String isCorrectPin() {
 		if (!cardModel.isCorrectPin(cardNo, pinNo)) {

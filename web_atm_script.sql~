@@ -37,15 +37,15 @@ CREATE TABLE log (
 
 ALTER TABLE card
    ADD FOREIGN KEY (CustID)
-   REFERENCES customer (CustID);
+   REFERENCES CUSTOMER (CustID);
    
 ALTER TABLE log
    ADD FOREIGN KEY (ATMID)
-   REFERENCES atm (ATMID);
+   REFERENCES ATM (ATMID);
 
 ALTER TABLE log
    ADD FOREIGN KEY (CardNo)
-   REFERENCES card (CardNo);
+   REFERENCES CARD (CardNo);
    
 INSERT INTO customer (CustName, Email, Address)
 	VALUE ('Tạ Minh Tiên', 'taminhtien1993@gmail.com', '1/4 ấp Đình, xã Tân Xuân, huyện Hóc Môn, TP. HCM');
