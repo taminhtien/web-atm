@@ -1,7 +1,5 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -9,7 +7,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import model.CardModel;
-import entities.Card;
 
 public class CardController extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -8,8 +9,8 @@ import org.hibernate.SessionFactory;
 
 import entities.Card;
 
-public class CardModel {
 
+public class CardModel {
 	public boolean isExistCard(String cardNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
@@ -24,10 +25,10 @@ public class CardModel {
 
 			List<Card> cards = query.list();
 
-			if(cards != null) {
+			if (cards != null) {
 				return true;
 			}
-			
+
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,7 +36,7 @@ public class CardModel {
 		}
 		return false;
 	}
-	
+
 	public boolean isCorrectPin(String cardNo, String pinNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
@@ -51,9 +52,9 @@ public class CardModel {
 			List<Card> cards = query.list();
 
 			System.out.println(cards.get(0).getPin());
-			if(cards != null && cards.get(0).getPin().equals(pinNo))
+			if (cards != null && cards.get(0).getPin().equals(pinNo))
 				return true;
-			
+
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
