@@ -64,3 +64,13 @@ a:hover {
 .btn {
 	border-radius: 0px 0px 0px 0px;
 }
+
+.text-success {
+	font-weight: bold;
+	color: #2980b9;
+}
+
+.text-failure {
+	font-weight: bold;
+	color: #c0392b;
+}

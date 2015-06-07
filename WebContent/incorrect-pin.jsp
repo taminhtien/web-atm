@@ -6,6 +6,6 @@
 		<label for="pinNo" class="control-label">Please enter your PIN and press "Enter"</label>
 		<input type="text" class="form-control" placeholder="Enter Pin Number" maxlength="4" id="pinNo" name="pinNo" required>
 		<p>Just only 4 numbers</p> 
-		<p id="showError" style="color: red; font-weight: bold;">This Pin number is not correct!</p>
+		<p id="showError" class="text-failure">This Pin number is not correct!</p>
 	</div>
 </s:form>

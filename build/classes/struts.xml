@@ -38,6 +38,10 @@
 			<result name="success" type="tiles">/index</result>
 			<result name="error" type="tiles">/incorrect-pin</result>
 		</action>
+		
+		<action name="check-balance" class="controller.CardController" method="loadCheckBalanceScreen">
+			<result name="success" type="tiles">/check-balance</result>
+		</action>
 	</package>
 </struts>
 

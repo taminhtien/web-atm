@@ -43,4 +43,11 @@
 		<put-attribute name="content" value="/incorrect-pin.jsp" />
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
+	
+	<definition name="/check-balance" template="templates/screen.jsp">
+		<put-attribute name="title" value="Check Balance - Web ATM" />
+		<put-attribute name="content" value="/check-balance/check-balance.jsp" />
+		<put-attribute name="script" value="/js/enter-pin.js" />
+	</definition>
+	
 </tiles-definitions>
