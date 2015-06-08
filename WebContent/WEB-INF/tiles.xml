@@ -62,6 +62,18 @@
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 	
+	<definition name="/change-pin-incorrect-old-pin" template="templates/screen.jsp">
+		<put-attribute name="title" value="Change PIN - Web ATM" />
+		<put-attribute name="content" value="/change-pin/incorrect-old-pin.jsp" />
+		<put-attribute name="script" value="/js/enter-pin.js" />
+	</definition>
+	
+	<definition name="/change-pin-success" template="templates/screen.jsp">
+		<put-attribute name="title" value="Change PIN - Web ATM" />
+		<put-attribute name="content" value="/change-pin/success.jsp" />
+		<put-attribute name="script" value="/js/enter-pin.js" />
+	</definition>
+	
 	<definition name="/change-pin-error" template="templates/screen.jsp">
 		<put-attribute name="title" value="Change PIN - Web ATM" />
 		<put-attribute name="content" value="/change-pin/error.jsp" />

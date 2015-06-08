@@ -49,12 +49,12 @@
 		
 		<action name="change-pin-old-pin" class="controller.CardController" method="checkOldPin">
 			<result name="success" type="tiles">/change-pin-new-pin</result>
-			<result name="error" type="tiles">/change-pin-error</result>
+			<result name="error" type="tiles">/change-pin-incorrect-old-pin</result>
 		</action>
 		
-		<action name="change-pin.new-pin" class="controller.CardController" method="changePin">
-			<result name="success" type="tiles">/change-pin.success</result>
-			<result name="error" type="tiles">/change-pin.failure</result>
+		<action name="change-pin-new-pin" class="controller.CardController" method="changePin">
+			<result name="success" type="tiles">/change-pin-success</result>
+			<result name="error" type="tiles">/change-pin-error</result>
 		</action>
 	</package>
 </struts>

@@ -79,8 +79,22 @@ public class CardModel {
 		return null;
 	}
 
-	public boolean updatePin(String cardNo) {
-		
+	public boolean updatePin(String cardNo, String newPin) {
+		Card card = getCard(cardNo);
+		card.setPin(newPin);
+
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+		try {
+			session.getTransaction().begin();
+			session.update(card);
+			session.flush();
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
 		return false;
 	}
 }
