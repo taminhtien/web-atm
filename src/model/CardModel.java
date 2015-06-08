@@ -11,6 +11,33 @@ import entities.Card;
 
 
 public class CardModel {
+	public List<Card> getCard(String cardNo) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.getTransaction().begin();
+			String sql = "Select c from " + Card.class.getName() + " c "
+					+ " where c.cardNo=:cardNo ";
+
+			Query query = session.createQuery(sql);
+			query.setParameter("cardNo", cardNo);
+
+			List<Card> cards = query.list();
+
+			if (cards != null) {
+				session.getTransaction().commit();
+				return cards;
+			}
+			session.getTransaction().commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		return cards;
+	}
+	
 	public boolean isExistCard(String cardNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
@@ -108,6 +135,32 @@ public class CardModel {
 			if (cards != null) {
 				session.getTransaction().commit();
 				return cards.get(0).getBalance();
+			}
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		return null;
+	}
+
+	public String getOldPin(String cardNo) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.getTransaction().begin();
+			String sql = "Select c from " + Card.class.getName() + " c "
+					+ " where c.cardNo=:cardNo ";
+
+			Query query = session.createQuery(sql);
+			query.setParameter("cardNo", cardNo);
+
+			List<Card> cards = query.list();
+
+			if (cards != null) {
+				session.getTransaction().commit();
+				return cards.get(0).getPin()();
 			}
 			session.getTransaction().commit();
 		} catch (Exception e) {
