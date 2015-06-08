@@ -14,7 +14,7 @@ public class CardModel {
 	public List<Card> getCard(String cardNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
-
+		List<Card> cards = null;
 		try {
 			session.getTransaction().begin();
 			String sql = "Select c from " + Card.class.getName() + " c "
@@ -23,7 +23,7 @@ public class CardModel {
 			Query query = session.createQuery(sql);
 			query.setParameter("cardNo", cardNo);
 
-			List<Card> cards = query.list();
+			cards = query.list();
 
 			if (cards != null) {
 				session.getTransaction().commit();
@@ -66,28 +66,9 @@ public class CardModel {
 	}
 
 	public boolean isCorrectPin(String cardNo, String pinNo) {
-		SessionFactory factory = HibernateUtils.getSessionFactory();
-		Session session = factory.getCurrentSession();
-
-		try {
-			session.getTransaction().begin();
-			String sql = "Select c from " + Card.class.getName() + " c "
-					+ " where c.cardNo=:cardNo ";
-
-			Query query = session.createQuery(sql);
-			query.setParameter("cardNo", cardNo);
-
-			List<Card> cards = query.list();
-
-			if (cards != null && cards.get(0).getPin().equals(pinNo)) {
-				session.getTransaction().commit();
-				return true;
-			}
-
-			session.getTransaction().commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			session.getTransaction().rollback();
+		List<Card> cards = getCard(cardNo);
+		if (cards != null && cards.get(0).getPin().equals(pinNo)) {
+			return true;
 		}
 		return false;
 	}
@@ -145,27 +126,9 @@ public class CardModel {
 	}
 
 	public String getOldPin(String cardNo) {
-		SessionFactory factory = HibernateUtils.getSessionFactory();
-		Session session = factory.getCurrentSession();
-
-		try {
-			session.getTransaction().begin();
-			String sql = "Select c from " + Card.class.getName() + " c "
-					+ " where c.cardNo=:cardNo ";
-
-			Query query = session.createQuery(sql);
-			query.setParameter("cardNo", cardNo);
-
-			List<Card> cards = query.list();
-
-			if (cards != null) {
-				session.getTransaction().commit();
-				return cards.get(0).getPin()();
-			}
-			session.getTransaction().commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			session.getTransaction().rollback();
+		List<Card> cards = getCard(cardNo);
+		if (cards != null) {
+			return cards.get(0).getPin();
 		}
 		return null;
 	}
