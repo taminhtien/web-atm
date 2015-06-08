@@ -3,31 +3,32 @@ package model;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 
 import entities.Card;
 
 public class CardModel {
 
-	public List<Card> getCard(String cardNo) {
+	public Card getCard(String cardNo) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
-		List<Card> cards = null;
+		Card card = null;
 		try {
 			session.getTransaction().begin();
-			String sql = "Select c from " + Card.class.getName() + " c "
-					+ " where c.cardNo=:cardNo ";
 
-			Query query = session.createQuery(sql);
-			query.setParameter("cardNo", cardNo);
-
-			cards = query.list();
-
-			if (cards != null) {
+			Criteria crit = session.createCriteria(Card.class);
+			crit.add(Restrictions.eq("cardNo", cardNo));
+			card = (Card) crit.uniqueResult();
+			
+			if (card != null) {
 				session.getTransaction().commit();
-				return cards;
+				return card;
 			}
 			session.getTransaction().commit();
 
@@ -35,46 +36,51 @@ public class CardModel {
 			e.printStackTrace();
 			session.getTransaction().rollback();
 		}
-		return cards;
+		return card;
 	}
 
 	public boolean isExistCard(String cardNo) {
-		List<Card> cards = getCard(cardNo);
-		if (cards != null) {
+		Card card = getCard(cardNo);
+		if (card != null) {
 			return true;
 		}
 		return false;
 	}
 
 	public boolean isCorrectPin(String cardNo, String pinNo) {
-		List<Card> cards = getCard(cardNo);
-		if (cards != null && cards.get(0).getPin().equals(pinNo)) {
+		Card card = getCard(cardNo);
+		if (card != null && card.getPin().equals(pinNo)) {
 			return true;
 		}
 		return false;
 	}
 
 	public String getCustName(String cardNo) {
-		List<Card> cards = getCard(cardNo);
-		if (cards != null) {
-			return cards.get(0).getCustomer().getCustName();
+		Card card = getCard(cardNo);
+		if (card != null) {
+			return card.getCustomer().getCustName();
 		}
 		return null;
 	}
 
 	public String getCardBalance(String cardNo) {
-		List<Card> cards = getCard(cardNo);
-		if (cards != null) {
-			return cards.get(0).getBalance();
+		Card card = getCard(cardNo);
+		if (card != null) {
+			return card.getBalance();
 		}
 		return null;
 	}
 
 	public String getPin(String cardNo) {
-		List<Card> cards = getCard(cardNo);
-		if (cards != null) {
-			return cards.get(0).getPin();
+		Card card = getCard(cardNo);
+		if (card != null) {
+			return card.getPin();
 		}
 		return null;
+	}
+
+	public boolean updatePin(String cardNo) {
+		
+		return false;
 	}
 }
