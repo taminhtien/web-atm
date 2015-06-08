@@ -50,4 +50,10 @@
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 	
+	<definition name="/change-pin" template="templates/screen.jsp">
+		<put-attribute name="title" value="Change PIN - Web ATM" />
+		<put-attribute name="content" value="/change-pin/change-pin.jsp" />
+		<put-attribute name="script" value="/js/change-pin.js" />
+	</definition>
+	
 </tiles-definitions>

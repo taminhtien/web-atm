@@ -90,4 +90,8 @@ public class CardController extends ActionSupport implements SessionAware {
 		balance = cardModel.getCardBalance(sessionMap.get("CardNo").toString());
 		return SUCCESS;
 	}
+	
+	public String loadChangePinScreen() {
+		return SUCCESS;
+	}
 }

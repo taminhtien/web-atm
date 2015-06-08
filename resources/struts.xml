@@ -42,6 +42,10 @@
 		<action name="check-balance" class="controller.CardController" method="loadCheckBalanceScreen">
 			<result name="success" type="tiles">/check-balance</result>
 		</action>
+		
+		<action name="change-pin" class="controller.CardController" method="loadChangePinScreen">
+			<result name="success" type="tiles">/change-pin</result>
+		</action>
 	</package>
 </struts>
 
