@@ -14,11 +14,20 @@ public class CardController extends ActionSupport implements SessionAware {
 	private String cardNo;
 	private String pinNo;
 	private String balance;
+	private String oldPin;
 	private Map<String, Object> sessionMap;
 
 	@Override
 	public void setSession(Map<String, Object> sessionMap) {
 		this.sessionMap = sessionMap;
+	}
+
+	public String getOldPin() {
+		return oldPin;
+	}
+
+	public void setOldPin(String oldPin) {
+		this.oldPin = oldPin;
 	}
 
 	public String getBalance() {
@@ -90,8 +99,15 @@ public class CardController extends ActionSupport implements SessionAware {
 		balance = cardModel.getCardBalance(sessionMap.get("CardNo").toString());
 		return SUCCESS;
 	}
-	
+
+	/**
+	 * Load change pin screen specifically entering old pin screen
+	 */
 	public String loadChangePinScreen() {
+		return SUCCESS;
+	}
+	
+	public String checkOldPin() {
 		return SUCCESS;
 	}
 }

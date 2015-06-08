@@ -46,6 +46,10 @@
 		<action name="change-pin" class="controller.CardController" method="loadChangePinScreen">
 			<result name="success" type="tiles">/change-pin</result>
 		</action>
+		
+		<action name="change-pin.old-pin" class="controller.CardController" method="checkOldPin">
+			<result name="success" type="tiles">/change-pin.old-pin</result>
+		</action>
 	</package>
 </struts>
 
