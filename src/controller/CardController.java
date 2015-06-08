@@ -71,9 +71,11 @@ public class CardController extends ActionSupport implements SessionAware {
 			return ERROR;
 		} else {
 			sessionMap.put("CardNo", cardNo);
+			
 			/**
 			 * Get Customer name and put it to session
 			 */
+			
 			String custName = cardModel.getCustName(cardNo);
 			sessionMap.put("CustName", custName);
 			return SUCCESS;
@@ -107,7 +109,18 @@ public class CardController extends ActionSupport implements SessionAware {
 		return SUCCESS;
 	}
 	
+	/**
+	 * Get old pin from cardNo information
+	 * @return oldPin
+	 */
+	
+	public String getOldPinFromCardNo() {
+		return cardModel.getOldPin(sessionMap.get("CardNo").toString());
+	}
+	
 	public String checkOldPin() {
+		System.out.println(oldPin);
+		System.out.println(pinNo);
 		return SUCCESS;
 	}
 }
