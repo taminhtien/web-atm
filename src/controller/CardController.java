@@ -110,17 +110,17 @@ public class CardController extends ActionSupport implements SessionAware {
 	}
 	
 	/**
-	 * Get old pin from cardNo information
-	 * @return oldPin
+	 * Check valid old pin
 	 */
 	
-	public String getOldPinFromCardNo() {
-		return cardModel.getOldPin(sessionMap.get("CardNo").toString());
-	}
-	
 	public String checkOldPin() {
-		System.out.println(oldPin);
-		System.out.println(pinNo);
-		return SUCCESS;
+		String cardNo = sessionMap.get("CardNo").toString();
+		if (cardNo != null) {
+			String pinNo = cardModel.getPin(sessionMap.get("CardNo").toString());
+			if (pinNo != null && oldPin.equals(pinNo)) {
+				return SUCCESS;
+			}
+		}
+		return ERROR;
 	}
 }

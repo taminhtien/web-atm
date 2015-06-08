@@ -70,7 +70,7 @@ public class CardModel {
 		return null;
 	}
 
-	public String getOldPin(String cardNo) {
+	public String getPin(String cardNo) {
 		List<Card> cards = getCard(cardNo);
 		if (cards != null) {
 			return cards.get(0).getPin();
