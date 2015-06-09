@@ -20,6 +20,7 @@ import javax.persistence.Table;
 @Table(name = "atm", catalog = "atm")
 public class Atm implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer atmid;
 	private String address;
 	private String leftMoney;

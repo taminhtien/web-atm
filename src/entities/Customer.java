@@ -20,6 +20,7 @@ import javax.persistence.Table;
 @Table(name = "customer", catalog = "atm")
 public class Customer implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer custId;
 	private String custName;
 	private String email;
@@ -89,5 +90,4 @@ public class Customer implements java.io.Serializable {
 	public void setCards(Set<Card> cards) {
 		this.cards = cards;
 	}
-
 }

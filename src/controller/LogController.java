@@ -3,15 +3,14 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.LogModel;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import entities.Log;
 
 public class LogController extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
 	private List<Log> listLog = new ArrayList<Log>();
-	private LogModel logModel = new LogModel();
 
 	public List<Log> getListLog() {
 		return listLog;
@@ -26,5 +25,4 @@ public class LogController extends ActionSupport {
 		//this.listLog = this.logModel.findAll();
 		return SUCCESS;
 	}
-
 }

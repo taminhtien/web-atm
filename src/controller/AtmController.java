@@ -3,15 +3,16 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.AtmModel;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import entities.Atm;
 
 public class AtmController extends ActionSupport {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<Atm> listAtm = new ArrayList<Atm>();
-	private AtmModel atmModel = new AtmModel();
 
 	public List<Atm> getListAtm() {
 		return listAtm;
@@ -26,5 +27,4 @@ public class AtmController extends ActionSupport {
 		//this.listAtm = atmModel.findAll();
 		return SUCCESS;
 	}
-
 }

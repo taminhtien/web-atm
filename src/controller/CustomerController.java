@@ -6,12 +6,10 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 
 import entities.Customer;
-import model.CustomerModel;
 
 public class CustomerController extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private List<Customer> listCustomer = new ArrayList<Customer>();
-	private CustomerModel cusModel = new CustomerModel();
 	private Customer cust = new Customer();
 
 	public Customer getCust() {
@@ -41,8 +39,6 @@ public class CustomerController extends ActionSupport {
 	}
 
 	public String addCustomer() {
-		//this.cusModel.create(cust);
-		//this.listCustomer = this.cusModel.findAll();
 		return SUCCESS;
 	}
 }

@@ -22,6 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "log", catalog = "atm")
 public class Log implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer logId;
 	private Atm atm;
 	private Card card;
