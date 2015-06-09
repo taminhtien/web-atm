@@ -1,3 +1,6 @@
+/hibernate.cfg.xml
+/hibernate.reveng.xml
 /controller/
 /entities/
 /model/
+/struts.xml
