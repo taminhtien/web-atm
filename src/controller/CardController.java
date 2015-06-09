@@ -79,12 +79,10 @@ public class CardController extends ActionSupport implements SessionAware {
 		if (!cardModel.isExistCard(cardNo)) {
 			return ERROR;
 		} else {
+			// Put cardNo to session
 			sessionMap.put("CardNo", cardNo);
 
-			/**
-			 * Get Customer name and put it to session
-			 */
-
+			// Get Customer name and put it to session
 			String custName = cardModel.getCustName(cardNo);
 			sessionMap.put("CustName", custName);
 			return SUCCESS;
@@ -98,6 +96,7 @@ public class CardController extends ActionSupport implements SessionAware {
 		if (!cardModel.isCorrectPin(sessionMap.get("CardNo").toString(), pinNo)) {
 			return ERROR;
 		} else {
+			sessionMap.put("logged", true);
 			return SUCCESS;
 		}
 	}
@@ -107,8 +106,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	 */
 
 	public String loadCheckBalanceScreen() {
-		if (null != sessionMap.get("CardNo")) {
-			System.out.println(sessionMap.get("CardNo").toString());
+		if (null != sessionMap.get("logged")) {
 			balance = cardModel.getCardBalance(sessionMap.get("CardNo").toString());
 			return SUCCESS;
 		}
@@ -119,8 +117,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	 * Load change pin screen specifically entering old pin screen
 	 */
 	public String loadChangePinScreen() {
-		if (null != sessionMap.get("CardNo")) {
-			System.out.println(sessionMap.get("CardNo").toString());
+		if (null != sessionMap.get("logged")) {
 			return SUCCESS;
 		}
 		return ERROR;
@@ -157,8 +154,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	}
 	
 	public String exit() {
-		//sessionMap.put("CardNo", "");
-		sessionMap.remove("CardNo");
+		sessionMap.remove("logged");
 		return SUCCESS;
 	}
 }
