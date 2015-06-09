@@ -22,7 +22,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> sessionMap) {
 		this.sessionMap = sessionMap;
 	}
-	
+
 	public String getNewPin() {
 		return newPin;
 	}
@@ -30,8 +30,6 @@ public class CardController extends ActionSupport implements SessionAware {
 	public void setNewPin(String newPin) {
 		this.newPin = newPin;
 	}
-
-
 
 	public String getOldPin() {
 		return oldPin;
@@ -82,11 +80,11 @@ public class CardController extends ActionSupport implements SessionAware {
 			return ERROR;
 		} else {
 			sessionMap.put("CardNo", cardNo);
-			
+
 			/**
 			 * Get Customer name and put it to session
 			 */
-			
+
 			String custName = cardModel.getCustName(cardNo);
 			sessionMap.put("CustName", custName);
 			return SUCCESS;
@@ -109,21 +107,29 @@ public class CardController extends ActionSupport implements SessionAware {
 	 */
 
 	public String loadCheckBalanceScreen() {
-		balance = cardModel.getCardBalance(sessionMap.get("CardNo").toString());
-		return SUCCESS;
+		if (null != sessionMap.get("CardNo")) {
+			System.out.println(sessionMap.get("CardNo").toString());
+			balance = cardModel.getCardBalance(sessionMap.get("CardNo").toString());
+			return SUCCESS;
+		}
+		return ERROR;
 	}
 
 	/**
 	 * Load change pin screen specifically entering old pin screen
 	 */
 	public String loadChangePinScreen() {
-		return SUCCESS;
+		if (null != sessionMap.get("CardNo")) {
+			System.out.println(sessionMap.get("CardNo").toString());
+			return SUCCESS;
+		}
+		return ERROR;
 	}
-	
+
 	/**
 	 * Check valid old pin
 	 */
-	
+
 	public String checkOldPin() {
 		String cardNo = sessionMap.get("CardNo").toString();
 		if (cardNo != null) {
@@ -134,11 +140,11 @@ public class CardController extends ActionSupport implements SessionAware {
 		}
 		return ERROR;
 	}
-	
+
 	/**
 	 * Change Pin
 	 */
-	
+
 	public String changePin() {
 		String cardNo = sessionMap.get("CardNo").toString();
 		if (cardNo != null) {
@@ -148,5 +154,11 @@ public class CardController extends ActionSupport implements SessionAware {
 			}
 		}
 		return ERROR;
+	}
+	
+	public String exit() {
+		//sessionMap.put("CardNo", "");
+		sessionMap.remove("CardNo");
+		return SUCCESS;
 	}
 }

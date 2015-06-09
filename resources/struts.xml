@@ -9,22 +9,6 @@
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 
-		<action name="customers" class="controller.CustomerController" method="execute">
-			<result name="success" type="tiles">/customers</result>
-		</action>
-		
-		<action name="add" class="controller.CustomerController" method="add">
-			<result name="success">/add.jsp</result>
-		</action>
-		
-		<action name="addCustomer" class="controller.CustomerController" method="addCustomer">
-			<result name="success" type="tiles">/customers</result>
-		</action>
-		
-		<action name="card" class="controller.CardController" method="execute">
-			<result name="success" type="tiles">/card</result>
-		</action>
-
 		<action name="login" class="controller.CardController" method="loadEnteringCardScreen">
 			<result name="success" type="tiles">/login</result>
 		</action>
@@ -41,10 +25,12 @@
 		
 		<action name="check-balance" class="controller.CardController" method="loadCheckBalanceScreen">
 			<result name="success" type="tiles">/check-balance</result>
+			<result name="error" type="tiles">/login</result>
 		</action>
 		
 		<action name="change-pin" class="controller.CardController" method="loadChangePinScreen">
 			<result name="success" type="tiles">/change-pin</result>
+			<result name="error" type="tiles">/login</result>
 		</action>
 		
 		<action name="change-pin-old-pin" class="controller.CardController" method="checkOldPin">
@@ -55,6 +41,11 @@
 		<action name="change-pin-new-pin" class="controller.CardController" method="changePin">
 			<result name="success" type="tiles">/change-pin-success</result>
 			<result name="error" type="tiles">/change-pin-error</result>
+		</action>
+		
+		<action name="exit" class="controller.CardController" method="exit">
+			<result name="success" type="tiles">/exit-success</result>
+			<result name="error" type="tiles">/exit-error</result>
 		</action>
 	</package>
 </struts>

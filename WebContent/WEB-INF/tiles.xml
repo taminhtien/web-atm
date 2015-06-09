@@ -4,15 +4,6 @@
   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-	<definition name="/customers" template="templates/layout.jsp">
-		<put-attribute name="title" value="Customer page" />
-		<put-attribute name="content" value="/customers.jsp" />
-	</definition>
-	
-	<definition name="/card" template="templates/layout.jsp">
-		<put-attribute name="title" value="Card page" />
-		<put-attribute name="content" value="/card.jsp" />
-	</definition>
 	
 	<definition name="/login" template="templates/screen.jsp">
 		<put-attribute name="title" value="Web ATM" />
@@ -77,6 +68,12 @@
 	<definition name="/change-pin-error" template="templates/screen.jsp">
 		<put-attribute name="title" value="Change PIN - Web ATM" />
 		<put-attribute name="content" value="/change-pin/error.jsp" />
+		<put-attribute name="script" value="/js/enter-pin.js" />
+	</definition>
+	
+	<definition name="/exit-success" template="templates/screen.jsp">
+		<put-attribute name="title" value="Exit - Web ATM" />
+		<put-attribute name="content" value="/change-pin/success.jsp" />
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 	
