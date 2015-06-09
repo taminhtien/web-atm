@@ -140,9 +140,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	 */
 	
 	public String changePin() {
-		System.out.println(newPin);
 		String cardNo = sessionMap.get("CardNo").toString();
-		System.out.println(cardNo);
 		if (cardNo != null) {
 			boolean updatePinNo = cardModel.updatePin(cardNo, newPin);
 			if (updatePinNo == true) {
