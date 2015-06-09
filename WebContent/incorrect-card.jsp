@@ -4,7 +4,7 @@
 	<div class="form-group">
 		<label for="cardNo" class="control-label">Enter your Card Number and press "Enter"</label>
 		<input type="text" class="form-control" placeholder="Enter Card Number" maxlength="10" id="cardNo" name="cardNo" required>
-		<p>Just only 10 numbers</p> 
+		<p>Only 10 numbers</p> 
 		<p id="showError" class="text-failure">This card does not exist!</p>
 	</div>
 </s:form>

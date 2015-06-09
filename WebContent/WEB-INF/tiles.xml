@@ -73,8 +73,8 @@
 	
 	<definition name="/exit-success" template="templates/screen.jsp">
 		<put-attribute name="title" value="Exit - Web ATM" />
-		<put-attribute name="content" value="/change-pin/success.jsp" />
-		<put-attribute name="script" value="/js/enter-pin.js" />
+		<put-attribute name="content" value="/login.jsp" />
+		<put-attribute name="script" value="/js/login.js" />
 	</definition>
 	
 </tiles-definitions>
