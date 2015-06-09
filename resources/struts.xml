@@ -47,6 +47,16 @@
 			<result name="success" type="tiles">/exit-success</result>
 			<result name="error" type="tiles">/exit-error</result>
 		</action>
+		
+		<action name="withdraw" class="controller.CardController" method="loadWithdrawScreen">
+			<result name="success" type="tiles">/withdraw</result>
+			<result name="error" type="tiles">/login</result>
+		</action>
+		
+		<action name="withdraw-enter-amount" class="controller.CardController" method="checkAmount">
+			<result name="success" type="tiles">/withdraw-success</result>
+			<result name="error" type="tiles">/login</result>
+		</action>
 	</package>
 </struts>
 

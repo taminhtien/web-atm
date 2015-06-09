@@ -77,4 +77,10 @@
 		<put-attribute name="script" value="/js/login.js" />
 	</definition>
 	
+	<definition name="/withdraw" template="templates/screen.jsp">
+		<put-attribute name="title" value="Withdraw - Web ATM" />
+		<put-attribute name="content" value="/withdraw/enter-amount.jsp" />
+		<put-attribute name="script" value="/js/enter-amount.js" />
+	</definition>
+	
 </tiles-definitions>

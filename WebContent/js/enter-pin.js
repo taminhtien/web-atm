@@ -10,7 +10,7 @@ function inputdata(key) {
 
 function isValidPinNumber(pinNo) {
     var isValid = false;
-    var regex = /^([0-9]{4})$/;
+    var regex = /^([0-9])$/;
     if (regex.test(pinNo)) {
         isValid = true;
     }

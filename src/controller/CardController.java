@@ -157,4 +157,14 @@ public class CardController extends ActionSupport implements SessionAware {
 		sessionMap.remove("logged");
 		return SUCCESS;
 	}
+	
+	/**
+	 * Load withdraw screen specifically entering amount screen
+	 */
+	public String loadWithdrawScreen() {
+		if (null != sessionMap.get("logged")) {
+			return SUCCESS;
+		}
+		return ERROR;
+	}
 }
