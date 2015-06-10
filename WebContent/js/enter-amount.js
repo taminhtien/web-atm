@@ -1,14 +1,16 @@
 var amount = "";
 function inputdata(key) {
-	var pinLength = amount.length;
-	var val = key.value;
-	amount = $('#amount').val() + val;
-	$("#amount").val(amount);
+	var amountLength = amount.length;
+	if (amountLength < 7) {
+		var val = key.value;
+		amount = $('#amount').val() + val;
+		$("#amount").val(amount);
+	}
 }
 
 function isValidAmount(amount) {
     var isValid = false;
-    var regex = /^([0-9])$/;
+    var regex = /^([0-9]{7})$/;
     if (regex.test(amount)) {
         isValid = true;
     }
@@ -23,8 +25,8 @@ $(document).ready(function() {
 	
 	$('#key-enter').click(function() {
 		amount = $('#amount').val();
-        if (isValidPAmount(amount) === false) {
-            $("#showError").text("Invalid amount!");
+        if (isValidAmount(amount) === false) {
+            $("#showError").text("Invalid Amount!");
         }
         else {
             document.forms['form'].submit();

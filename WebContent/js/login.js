@@ -10,7 +10,7 @@ function inputdata(key) {
 
 function isValidCardNumber(cardNo) {
     var isValid = false;
-    var regex = /^([0-9])$/;
+    var regex = /^([0-9]{10})$/;
     if (regex.test(cardNo)) {
         isValid = true;
     }
