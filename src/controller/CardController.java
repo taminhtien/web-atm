@@ -167,4 +167,8 @@ public class CardController extends ActionSupport implements SessionAware {
 		}
 		return ERROR;
 	}
+	
+	public String checkAmount() {
+		return SUCCESS;
+	}
 }

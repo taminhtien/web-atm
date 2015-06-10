@@ -1,6 +1,5 @@
 /controller/
 /entities/
-/filter/
 /hibernate.cfg.xml
 /hibernate.reveng.xml
 /model/

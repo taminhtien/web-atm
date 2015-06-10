@@ -61,13 +61,13 @@
 	
 	<definition name="/change-pin-success" template="templates/screen.jsp">
 		<put-attribute name="title" value="Change PIN - Web ATM" />
-		<put-attribute name="content" value="/change-pin/success.jsp" />
+		<put-attribute name="content" value="/success.jsp" />
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 	
 	<definition name="/change-pin-error" template="templates/screen.jsp">
 		<put-attribute name="title" value="Change PIN - Web ATM" />
-		<put-attribute name="content" value="/change-pin/error.jsp" />
+		<put-attribute name="content" value="/error.jsp" />
 		<put-attribute name="script" value="/js/enter-pin.js" />
 	</definition>
 	
@@ -80,6 +80,12 @@
 	<definition name="/withdraw" template="templates/screen.jsp">
 		<put-attribute name="title" value="Withdraw - Web ATM" />
 		<put-attribute name="content" value="/withdraw/enter-amount.jsp" />
+		<put-attribute name="script" value="/js/enter-amount.js" />
+	</definition>
+	
+	<definition name="/withdraw-success" template="templates/screen.jsp">
+		<put-attribute name="title" value="Withdraw - Web ATM" />
+		<put-attribute name="content" value="/success.jsp" />
 		<put-attribute name="script" value="/js/enter-amount.js" />
 	</definition>
 	

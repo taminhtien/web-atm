@@ -53,7 +53,7 @@
 			<result name="error" type="tiles">/login</result>
 		</action>
 		
-		<action name="withdraw-enter-amount" class="controller.CardController" method="checkAmount">
+		<action name="withdraw-amount" class="controller.CardController" method="checkAmount">
 			<result name="success" type="tiles">/withdraw-success</result>
 			<result name="error" type="tiles">/login</result>
 		</action>
