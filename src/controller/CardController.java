@@ -13,7 +13,7 @@ public class CardController extends ActionSupport implements SessionAware {
 	private CardModel cardModel = new CardModel();
 	private String cardNo;
 	private String pinNo;
-	private String balance;
+	private Long balance;
 	private String oldPin;
 	private String newPin;
 	private Map<String, Object> sessionMap;
@@ -39,11 +39,11 @@ public class CardController extends ActionSupport implements SessionAware {
 		this.oldPin = oldPin;
 	}
 
-	public String getBalance() {
+	public Long getBalance() {
 		return balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(Long balance) {
 		this.balance = balance;
 	}
 

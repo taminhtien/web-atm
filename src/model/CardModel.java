@@ -59,7 +59,7 @@ public class CardModel {
 		return null;
 	}
 
-	public String getCardBalance(String cardNo) {
+	public Long getCardBalance(String cardNo) {
 		Card card = getCard(cardNo);
 		if (card != null) {
 			return card.getBalance();

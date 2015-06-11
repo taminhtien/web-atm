@@ -11,7 +11,5 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 		<mapping class="entities.Customer" />
 		<mapping class="entities.Card" />
-		<mapping class="entities.Atm" />
-		<mapping class="entities.Log" />
 	</session-factory>
 </hibernate-configuration>

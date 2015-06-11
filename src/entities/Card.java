@@ -2,15 +2,12 @@ package entities;
 
 // Generated May 26, 2015 1:52:35 AM by Hibernate Tools 3.4.0.CR1
 
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,8 +21,7 @@ public class Card implements java.io.Serializable {
 	private String cardNo;
 	private Customer customer;
 	private String pin;
-	private String balance;
-	private Set<Log> logs = new HashSet<Log>(0);
+	private Long balance;
 
 	public Card() {
 	}
@@ -35,23 +31,13 @@ public class Card implements java.io.Serializable {
 		this.customer = c.customer;
 		this.pin = c.pin;
 		this.balance = c.balance;
-		this.logs = c.logs;
 	}
 
-	public Card(String cardNo, Customer customer, String pin, String balance) {
+	public Card(String cardNo, Customer customer, String pin, Long balance) {
 		this.cardNo = cardNo;
 		this.customer = customer;
 		this.pin = pin;
 		this.balance = balance;
-	}
-
-	public Card(String cardNo, Customer customer, String pin, String balance,
-			Set<Log> logs) {
-		this.cardNo = cardNo;
-		this.customer = customer;
-		this.pin = pin;
-		this.balance = balance;
-		this.logs = logs;
 	}
 
 	@Id
@@ -84,20 +70,11 @@ public class Card implements java.io.Serializable {
 	}
 
 	@Column(name = "Balance", nullable = false, length = 16777215)
-	public String getBalance() {
+	public Long getBalance() {
 		return this.balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(Long balance) {
 		this.balance = balance;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "card")
-	public Set<Log> getLogs() {
-		return this.logs;
-	}
-
-	public void setLogs(Set<Log> logs) {
-		this.logs = logs;
 	}
 }
