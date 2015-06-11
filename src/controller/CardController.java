@@ -16,11 +16,20 @@ public class CardController extends ActionSupport implements SessionAware {
 	private Long balance;
 	private String oldPin;
 	private String newPin;
+	private Long amount;
 	private Map<String, Object> sessionMap;
 
 	@Override
 	public void setSession(Map<String, Object> sessionMap) {
 		this.sessionMap = sessionMap;
+	}
+
+	public Long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Long amount) {
+		this.amount = amount;
 	}
 
 	public String getNewPin() {
@@ -169,6 +178,16 @@ public class CardController extends ActionSupport implements SessionAware {
 	}
 	
 	public String checkAmount() {
-		return SUCCESS;
+		String cardNo = sessionMap.get("CardNo").toString();
+		if (cardNo != null) {
+			Long balance = cardModel.getCardBalance(cardNo);
+			if (balance >= amount) {
+				if (cardModel.updateBalance(cardNo, balance - amount)) {
+					return SUCCESS;	
+				}
+				return ERROR;
+			}
+		}
+		return ERROR;
 	}
 }

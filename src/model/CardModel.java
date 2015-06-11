@@ -93,4 +93,23 @@ public class CardModel {
 		}
 		return false;
 	}
+
+	public boolean updateBalance(String cardNo, long l) {
+		Card card = getCard(cardNo);
+		card.setBalance(l);
+
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+		try {
+			session.getTransaction().begin();
+			session.update(card);
+			session.flush();
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		return false;
+	}
 }

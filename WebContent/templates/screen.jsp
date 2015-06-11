@@ -114,7 +114,7 @@
 		
 		<!-- Footer -->
 		<footer style="text-align: center; border-top: 1px solid #777;">
-			Copyright @tientm 2015
+			Copyright @vuongnguyen 2015
 		</footer>
 		<!-- End Footer -->
 	</div>
